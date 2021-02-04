@@ -8,8 +8,8 @@ pipeline {
                 sh 'sudo systemctl status apache2'
 
                 echo 'install php'
-                sh 'sudo apt install -y php7.4-cli'
-                sh 'php --version'
+                sh 'sudo apt-get install php -y'
+                sh 'php -v'
 
                 echo 'install composer'
                 sh 'sudo php -r "copy(\'https://getcomposer.org/installer\', \'composer-setup.php\');"'
