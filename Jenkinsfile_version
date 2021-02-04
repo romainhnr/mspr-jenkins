@@ -1,0 +1,20 @@
+pipeline { 
+	agent any
+	stages {
+		stage('check_environement_for_symfony'){
+			steps{
+				echo 'apahe2 status'
+				sh 'systemctl status apache2'
+				
+				echo 'php version'
+				sh 'php --version'
+				
+				echo 'check composer'
+				sh 'ls -la /home/cjenkins/composer.phar'
+				
+				echo 'symfony version'
+				sh '/home/cjenkins/.symfony/bin/symfony -V'
+			}
+		}
+	}
+}

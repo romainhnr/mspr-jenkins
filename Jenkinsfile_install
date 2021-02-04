@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    stages {
+        stage (‘install_env’){
+        steps {
+                echo 'install apache2'
+                sh 'sudo apt install apache2 -f'
+                sh 'sudo systemctl status apache2'
+
+                echo 'install php'
+                sh 'sudo apt install php7.4-cli -f'
+                sh 'php --version'
+
+                echo 'install composer'
+                sh 'sudo php -r "copy(\'https://getcomposer.org/installer\', \'composer-setup.php\');"'
+                sh 'sudo php -r "if (hash_file(\'sha384\', \'composer-setup.php\') === \'756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3\') { echo \'Installer verified\'; } else { echo \'Installer corrupt\'; unlink(\'composer-setup.php\'); } echo PHP_EOL;"'
+                sh 'sudo php composer-setup.php'
+                sh 'sudo php -r "unlink(\'composer-setup.php\');"'
+                
+            
+                echo 'install symfony'
+                sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
+                sh '/home/cjenkins/.symfony/bin/symfony -V'
+                
+            }
+        }
+    }
+}
