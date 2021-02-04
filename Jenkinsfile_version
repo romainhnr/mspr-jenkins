@@ -10,7 +10,7 @@ pipeline {
 				sh 'php -v'
 				
 				echo 'check composer'
-				sh 'ls -la /home/cjenkins/composer.phar'
+				sh 'ls -la /var/lib/jenkins/workspace/MSPR/composer.phar'
 				
 				echo 'symfony version'
 				sh '/var/lib/jenkins/.symfony/bin/symfony -V'
