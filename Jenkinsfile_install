@@ -4,11 +4,11 @@ pipeline {
         stage (‘install_env’){
         steps {
                 echo 'install apache2'
-                sh 'sudo apt install apache2 -f'
+                sh 'sudo apt install -y apache2'
                 sh 'sudo systemctl status apache2'
 
                 echo 'install php'
-                sh 'sudo apt install php7.4-cli -f'
+                sh 'sudo apt install -y php7.4-cli'
                 sh 'php --version'
 
                 echo 'install composer'
