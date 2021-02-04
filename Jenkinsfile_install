@@ -20,7 +20,7 @@ pipeline {
             
                 echo 'install symfony'
                 sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
-                sh '/home/vagrant/.symfony/bin/symfony -V'
+                sh '/var/lib/jenkins/.symfony/bin/symfony -V'
                 
             }
         }
