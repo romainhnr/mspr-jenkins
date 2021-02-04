@@ -6,7 +6,7 @@ pipeline {
 				echo 'apahe2 status'
 				sh 'systemctl status apache2'
 				
-				echo 'php version'
+				echo 'php version '
 				sh 'php -v'
 				
 				echo 'check composer'
