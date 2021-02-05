@@ -7,6 +7,7 @@ pipeline {
 				echo 'git clone'
                 sh 'cd env/'
 				sh 'git clone https://github.com/RPSM2/MSPR2.git'
+                sh 'cd project/'
 				
 			}
 		}
