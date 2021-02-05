@@ -1,1 +1,13 @@
 # pipeline global controlleur qui exécute tous les pipeline dans le bon ordre
+pipeline { 
+	agent any
+	stages {
+		stage('pipeline global'){
+			steps{
+				echo ''
+				sh ''
+
+			}
+		}
+	}
+}
