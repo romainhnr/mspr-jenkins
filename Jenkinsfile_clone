@@ -1,5 +1,5 @@
 # pipeline git clone de l'application, installation lib et dépendances
-pipeline { 
+pipeline {
 	agent any
 	stages {
 		stage('git clone'){
