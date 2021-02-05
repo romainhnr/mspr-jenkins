@@ -1,1 +1,13 @@
-# pipeline jenkins package application
+# pipeline jenkins package application : Capistrano, php deployer, zip de zouave
+pipeline { 
+	agent any
+	stages {
+		stage('package app'){
+			steps{
+				echo 'package app'
+				sh ''
+				
+			}
+		}
+	}
+}
