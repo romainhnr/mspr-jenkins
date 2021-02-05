@@ -1,5 +1,4 @@
 # pipeline git clone de l'application, installation lib et dépendances
-
 pipeline { 
 	agent any
 	stages {
@@ -9,7 +8,6 @@ pipeline {
         		sh 'cd env/'
 				sh 'git clone https://github.com/RPSM2/MSPR2.git'
 				
-      
 			}
 		}
 	}
