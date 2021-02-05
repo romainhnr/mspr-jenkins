@@ -11,8 +11,7 @@ pipeline {
 				sh 'php bin/phpunit'
 				
 				echo 'launch symfony'
-				sh 'cd my-project/'
-        		sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
+				sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
 				
 			}
 		}
