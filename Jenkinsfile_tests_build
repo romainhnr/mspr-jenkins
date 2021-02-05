@@ -1,4 +1,4 @@
-# jenkins pipeline exécution des tests / tests de couverture / normes de dev (PSR-2) / build de l'application
+# jenkins pipeline exécution des tests / tests de couverture : ajouter dépendance phpunit/ normes de dev (PSR-2) / build de l'application
 pipeline { 
 	agent any
 	stages {
@@ -12,7 +12,7 @@ pipeline {
 				
 				echo 'launch symfony'
 				sh 'cd my-project/'
-        			sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
+        		sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
 				
 			}
 		}
