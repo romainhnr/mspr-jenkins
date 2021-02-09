@@ -1,4 +1,4 @@
-# pipeline jenkins package application : Capistrano, php deployer, zip de zouave
+// pipeline jenkins package application pour déploiement : Capistrano (aka CR7), php deployer, zip de zouave
 pipeline { 
 	agent any
 	stages {
