@@ -6,7 +6,7 @@ pipeline {
 			steps{
 				echo 'git clone'
 				sh 'cd /'
-				sh 'git clone https://username:password@github.com/RPSM2/MSPR2.git'
+				sh 'git clone https://github.com/RPSM2/MSPR2.git'
 				sh 'cd MSPR2'
 			}
 		}
