@@ -5,16 +5,18 @@ pipeline {
 		stage('tests_build'){
 			steps{
 				echo 'install phpunit'
-				sh 'composer require --dev symfony/phpunit-bridge'
+				sh 'php composer.phar require --dev symfony/phpunit-bridge'
 				
 				echo 'changement de branche'
-				sh 'git checkout dev_test'
+				dir('MSPR2/'){
+					sh 'git checkout dev_test'
 				
-				echo 'launch test'
-				sh 'php bin/phpunit'
-				
-				echo 'launch symfony'
-				sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
+					echo 'launch test'
+					sh 'php bin/phpunit'
+
+					echo 'launch symfony'
+					sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
+				}
 				
 			}
 		}
