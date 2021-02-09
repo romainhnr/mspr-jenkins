@@ -23,7 +23,7 @@ pipeline {
                 sh '/var/lib/jenkins/.symfony/bin/symfony -V'
                 
                 echo 'install phpunit'
-				sh 'sudo apt-get install phpunit'
+		sh 'php composer.phar require phpunit/phpunit'
                 
             }
         }
