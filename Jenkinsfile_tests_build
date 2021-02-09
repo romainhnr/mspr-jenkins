@@ -3,20 +3,18 @@ pipeline {
 	agent any
 	stages {
 		stage('tests_build'){
-			steps{
-				echo 'install phpunit'
-				sh 'php composer.phar require --dev symfony/phpunit-bridge'
-				
-				echo 'changement de branche'
+			steps{							
 				dir('MSPR2/'){
+					echo 'changement de branche'
 					sh 'git checkout dev_test'
-				
-					echo 'launch test'
-					sh 'php bin/phpunit'
-
-					echo 'launch symfony'
-					sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
 				}
+				echo 'launch test'
+				sh 'php vendor/phpunit/phpunit/phpunit MSPR2/tests'
+
+				// echo 'launch symfony'
+				// sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
+				// sh '/var/lib/jenkins/.symfony/bin/symfony server:stop'
+				
 				
 			}
 		}
