@@ -22,6 +22,9 @@ pipeline {
                 sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
                 sh '/var/lib/jenkins/.symfony/bin/symfony -V'
                 
+                echo 'install phpunit'
+				sh 'sudo apt-get install phpunit'
+                
             }
         }
     }
