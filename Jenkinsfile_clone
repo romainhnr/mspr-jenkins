@@ -5,12 +5,11 @@ pipeline {
 		stage('git clone'){
 			steps{
 				echo 'git clone'
-			  	dir('/var/lib/jenkins/'){
-					sh 'git clone https://github.com/RPSM2/MSPR2.git'
-					dir('MSPR2/'){
-						sh 'ls -la'
-					}
-			  	}
+				sh 'git clone https://github.com/RPSM2/MSPR2.git'
+				dir('MSPR2/'){
+					sh 'ls -la'
+				}
+			  	
 
 			}
 		}
