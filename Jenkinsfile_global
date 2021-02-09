@@ -1,4 +1,4 @@
-# pipeline global controlleur qui exécute tous les pipeline dans le bon ordre
+// pipeline global controlleur qui exécute tous les pipeline dans le bon ordre
 pipeline { 
 	agent any
 	stages {
