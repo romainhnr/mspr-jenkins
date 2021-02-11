@@ -4,7 +4,7 @@ pipeline {
 	stages {
 		stage('pipeline global'){
 			steps{
-				echo ''
+				echo 'test'
 				sh ''
 
 			}
