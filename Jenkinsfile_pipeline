@@ -42,7 +42,7 @@ pipeline {
 				sh '/var/lib/jenkins/.symfony/bin/symfony -V'
 
                 echo 'phpunit version'
-                php vendor/phpunit/phpunit/phpunit -version
+                sh 'php vendor/phpunit/phpunit/phpunit -version'
             }
         }
         stage('Clone') { 
