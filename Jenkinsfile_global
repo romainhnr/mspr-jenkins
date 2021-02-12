@@ -8,15 +8,15 @@ pipeline {
 				sh 'pwd'
 				sh 'ls -la'
 				echo 'pipeline install'
-				sh 'Jenkinsfile_install'
+				sh './Jenkinsfile_install'
 				echo 'pipeline version'
-				sh 'Jenkinsfile_version'
+				sh './Jenkinsfile_version'
 				echo 'pipeline clone'
-				sh 'Jenkinsfile_clone'
+				sh './Jenkinsfile_clone'
 				echo 'pipeline tests'
-				sh 'Jenkinsfile_tests'
+				sh './Jenkinsfile_tests'
 				echo 'pipeline package'
-				sh 'Jenkinsfile_package'
+				sh './Jenkinsfile_package'
 
 			}
 		}
