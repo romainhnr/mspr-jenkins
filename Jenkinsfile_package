@@ -1,9 +1,14 @@
-// pipeline jenkins package application pour déploiement : Capistrano (aka CR7), php deployer, zip de zouave
+// pipeline jenkins package application pour déploiement : Capistrano (aka CR7), ansible, php deployer, zip de zouave
 pipeline { 
 	agent any
 	stages {
 		stage('package app'){
 			steps{
+				echo 'build app'
+				// echo 'launch symfony'
+				// sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
+				// sh '/var/lib/jenkins/.symfony/bin/symfony server:stop'
+				
 				echo 'package app'
 				sh ''
 				
