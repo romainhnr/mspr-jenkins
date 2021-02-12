@@ -9,19 +9,19 @@ pipeline {
 				
 				echo 'pipeline install'
 				build job: 'MSPR_Pipeline_2'
-				sh './Jenkinsfile_install'
+				//sh './Jenkinsfile_install'
 				
-				echo 'pipeline version'
-				sh './Jenkinsfile_version'
+				//echo 'pipeline version'
+				//sh './Jenkinsfile_version'
 				
-				echo 'pipeline clone'
-				sh './Jenkinsfile_clone'
+				//echo 'pipeline clone'
+				//sh './Jenkinsfile_clone'
 				
-				echo 'pipeline tests'
-				sh './Jenkinsfile_tests'
+				//echo 'pipeline tests'
+				//sh './Jenkinsfile_tests'
 				
-				echo 'pipeline package'
-				sh './Jenkinsfile_package'
+				//echo 'pipeline package'
+				//sh './Jenkinsfile_package'
 
 			}
 		}
