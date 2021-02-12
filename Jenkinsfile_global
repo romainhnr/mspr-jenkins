@@ -8,6 +8,7 @@ pipeline {
 				sh 'chmod +x Jenkinsfile*'
 				
 				echo 'pipeline install'
+				build job: 'Jenkinsfile_install'
 				sh './Jenkinsfile_install'
 				
 				echo 'pipeline version'
