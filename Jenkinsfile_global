@@ -4,8 +4,12 @@ pipeline {
 	stages {
 		stage('pipeline global'){
 			steps{
-				echo 'test'
-				sh ''
+				echo 'pipeline global'
+				sh 'Jenkinsfile_install'
+				sh 'Jenkinsfile_version'
+				sh 'Jenkinsfile_clone'
+				sh 'Jenkinsfile_tests'
+				sh 'Jenkinsfile_package'
 
 			}
 		}
