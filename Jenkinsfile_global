@@ -5,16 +5,20 @@ pipeline {
 		stage('pipeline global'){
 			steps{
 				echo 'pipeline global'
-				sh 'pwd'
-				sh 'ls -la'
+				sh 'chmod +x Jenkinsfile*'
+				
 				echo 'pipeline install'
 				sh './Jenkinsfile_install'
+				
 				echo 'pipeline version'
 				sh './Jenkinsfile_version'
+				
 				echo 'pipeline clone'
 				sh './Jenkinsfile_clone'
+				
 				echo 'pipeline tests'
 				sh './Jenkinsfile_tests'
+				
 				echo 'pipeline package'
 				sh './Jenkinsfile_package'
 
