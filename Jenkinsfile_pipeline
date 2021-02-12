@@ -1,0 +1,86 @@
+// jenkins pipeline MSPR 2 
+pipeline {
+    agent any 
+    stages {
+        stage('Install') { 
+            steps {
+                // installation de toutes les dépendances de l'environnement 
+
+                echo 'install apache2'
+                sh 'sudo apt install -y apache2'
+
+                echo 'install php'
+                sh 'sudo apt-get install php -y'
+
+                echo 'install composer'
+                sh 'sudo php -r "copy(\'https://getcomposer.org/installer\', \'composer-setup.php\');"'
+                sh 'sudo php -r "if (hash_file(\'sha384\', \'composer-setup.php\') === \'756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3\') { echo \'Installer verified\'; } else { echo \'Installer corrupt\'; unlink(\'composer-setup.php\'); } echo PHP_EOL;"'
+                sh 'sudo php composer-setup.php'
+                sh 'sudo php -r "unlink(\'composer-setup.php\');"'
+                
+                echo 'install symfony'
+                sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
+                
+                echo 'install phpunit'
+		        sh 'php composer.phar require phpunit/phpunit'
+            }
+        }
+        stage('Version') { 
+            steps {
+                // vérification des dépendances
+                
+                echo 'apahe2 status '
+				sh 'systemctl status apache2'
+				
+				echo 'php version '
+				sh 'php -v'
+				
+				echo 'check composer'
+				sh 'ls -la /var/lib/jenkins/workspace/MSPR/composer.phar'
+				
+				echo 'symfony version'
+				sh '/var/lib/jenkins/.symfony/bin/symfony -V'
+
+                echo 'phpunit version'
+                php vendor/phpunit/phpunit/phpunit -version
+            }
+        }
+        stage('Clone') { 
+            steps {
+                // git clone du dépôt de développement
+                
+                echo 'git clone'
+				sh 'git clone https://github.com/RPSM2/MSPR2.git'
+				dir('MSPR2/'){
+					sh 'ls -la'
+				}
+            }
+        }
+        stage('Tests') { 
+            steps {
+                // exécution des tests (fonctionnels, non régression, intégration, performances -> Alix) / test de couverture et normes de dev (PSR-2)
+
+                dir('MSPR2/'){
+					echo 'changement de branche'
+					sh 'git checkout dev_test'
+				}
+				echo 'launch test'
+				sh 'php vendor/phpunit/phpunit/phpunit MSPR2/tests'
+				
+            }
+        }
+        stage('Package') { 
+            steps {
+
+                // package application pour déploiement : Capistrano (aka CR7), ansible, php deployer, zip de zouave
+                
+                echo 'build app'
+				// sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
+				// sh '/var/lib/jenkins/.symfony/bin/symfony server:stop'
+				
+				echo 'package app'
+
+            }
+        }
+    }
+}
