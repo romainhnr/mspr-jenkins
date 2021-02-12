@@ -8,7 +8,7 @@ pipeline {
 				sh 'chmod +x Jenkinsfile*'
 				
 				echo 'pipeline install'
-				load "Jenkinsfile_install"
+				build job: 'MSPR_Pipeline_2'
 				sh './Jenkinsfile_install'
 				
 				echo 'pipeline version'
