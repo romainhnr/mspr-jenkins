@@ -23,9 +23,13 @@ pipeline {
                 
                 echo 'install phpunit'
 		        sh 'php composer.phar require phpunit/phpunit'
+				
+				echo 'install Symfony PHP CodeSniffer'
+				sh 'php composer.phar require --dev escapestudios/symfony2-coding-standard:3.x-dev'
+				sh 'vendor/bin/phpcs --config-set installed_paths vendor/escapestudios/symfony2-coding-standard'
             }
         }
-        stage('Version') { 
+        stage('Verification') { 
             steps {
                 // vérification des dépendances
                 
@@ -36,13 +40,16 @@ pipeline {
 				sh 'php -v'
 				
 				echo 'check composer'
-				sh 'ls -la /var/lib/jenkins/workspace/MSPR/composer.phar'
+				sh 'ls -la composer.phar'
 				
 				echo 'symfony version'
 				sh '/var/lib/jenkins/.symfony/bin/symfony -V'
 
                 echo 'phpunit version'
                 sh 'php vendor/phpunit/phpunit/phpunit --version'
+				
+				echo 'check php codesniffer coding standards'
+				sh 'vendor/bin/phpcs -i'
             }
         }
         stage('Clone') { 
@@ -67,11 +74,13 @@ pipeline {
 				echo 'launch test'
 				sh 'php vendor/phpunit/phpunit/phpunit MSPR2/tests'
 				
+				echo 'launch coding standards'
+				sh 'vendor/bin/phpcs MSPR2/'
+				
             }
         }
         stage('Package') { 
             steps {
-
                 // package application pour déploiement : Capistrano (aka CR7), ansible, php deployer, zip de zouave
                 
                 echo 'build app'
@@ -79,6 +88,9 @@ pipeline {
 				// sh '/var/lib/jenkins/.symfony/bin/symfony server:stop'
 				
 				echo 'package app'
+				
+				echo 'suppression projet'
+				sh 'rm -rf MSPR2'
 
             }
         }
