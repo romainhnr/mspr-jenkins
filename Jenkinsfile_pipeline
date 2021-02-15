@@ -77,18 +77,15 @@ pipeline {
 					echo 'changement de branche'
 					sh 'git checkout dev_test'
 				}
-				echo 'launch test'
-				sh 'php vendor/phpunit/phpunit/phpunit MSPR2/tests'
-				
-				//echo 'launch coding standards'
-				//sh 'vendor/bin/phpcs MSPR2/'
-				
-				echo 'launch test coverage'
-				sh 'php vendor/phpunit/phpunit/phpunit MSPR2/tests/ --coverage-xml MSPR2/tests/ --whitelist MSPR2/src/'
+
+				echo 'launch test and coverage'
+				sh 'php vendor/phpunit/phpunit/phpunit MSPR2/tests/ --coverage-xml report_pipeline/  --whitelist MSPR2/src/'
 				
 				echo 'script python check coverage test'
 				sh 'python check_coverage.py'
 				
+				echo 'launch coding standards'
+				sh 'vendor/bin/phpcs MSPR2/'
             }
         }
         stage('Package') { 
