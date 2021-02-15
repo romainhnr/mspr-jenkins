@@ -27,6 +27,9 @@ pipeline {
 				echo 'install Symfony PHP CodeSniffer'
 				sh 'php composer.phar require --dev escapestudios/symfony2-coding-standard:3.x-dev'
 				sh 'vendor/bin/phpcs --config-set installed_paths vendor/escapestudios/symfony2-coding-standard'
+				
+				echo 'install php xdebug code coverage'
+				sh 'sudo apt install php-xdebug -y'
             }
         }
         stage('Verification') { 
@@ -50,6 +53,9 @@ pipeline {
 				
 				echo 'check php codesniffer coding standards'
 				sh 'vendor/bin/phpcs -i'
+				
+				echo 'check xdebug code coverage'
+				sh 'php -ini | grep \'xdebug support\''
             }
         }
         stage('Clone') { 
@@ -76,6 +82,9 @@ pipeline {
 				
 				echo 'launch coding standards'
 				sh 'vendor/bin/phpcs MSPR2/'
+				
+				echo 'launch test coverage'
+				sh 'php vendor/phpunit/phpunit/phpunit MSPR2/tests/ --coverage-xml MSPR2/tests/ --whitelist MSPR2/src/'
 				
             }
         }
