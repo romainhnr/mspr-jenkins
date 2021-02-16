@@ -61,7 +61,7 @@ pipeline {
 				sh 'php -ini | grep \'xdebug support\''
 				
 				echo 'check ansible'
-				sh 'sudo ansible all -m ping -u vargant'
+				sh 'sudo ansible all -m ping -u vagrant'
             }
         }
         stage('Clone') { 
