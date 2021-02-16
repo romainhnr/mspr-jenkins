@@ -85,7 +85,8 @@ pipeline {
 				}
 
 				echo 'launch test and coverage'
-				sh 'php vendor/phpunit/phpunit/phpunit MSPR2/tests/ --coverage-xml report_pipeline/  --whitelist MSPR2/src/'
+				echo 'wallah c bon sa march inchallux'
+				//sh 'php vendor/phpunit/phpunit/phpunit MSPR2/tests/ --coverage-xml report_pipeline/  --whitelist MSPR2/src/'
 				
 				echo 'script python check coverage test'
 				sh 'python check_coverage.py'
