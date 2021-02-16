@@ -91,7 +91,7 @@ pipeline {
 				sh 'python check_coverage.py'
 				
 				echo 'launch coding standards'
-				sh 'vendor/bin/phpcs -s --report=summary MSPR2/'
+				sh 'vendor/bin/phpcs --report-summary=report_coding_standards.txt MSPR2/'
             }
         }
         stage('Package') { 
