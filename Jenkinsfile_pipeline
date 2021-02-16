@@ -30,6 +30,9 @@ pipeline {
 				
 				echo 'install php xdebug code coverage'
 				sh 'sudo apt install php-xdebug -y'
+				
+				echo 'install ansible'
+				sh 'sudo apt-get -y install ansible'
             }
         }
         stage('Verification') { 
@@ -56,6 +59,9 @@ pipeline {
 				
 				echo 'check xdebug code coverage'
 				sh 'php -ini | grep \'xdebug support\''
+				
+				echo 'check ansible'
+				sh 'ansible all -m ping -u vargant'
             }
         }
         stage('Clone') { 
@@ -96,7 +102,8 @@ pipeline {
 				// sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
 				// sh '/var/lib/jenkins/.symfony/bin/symfony server:stop'
 				
-				echo 'package app'
+				echo 'deploy app ansible'
+				sh 'ansible-playbook ansible_playbook.yml'
 				
 				echo 'suppression projet'
 				sh 'rm -rf MSPR2'
