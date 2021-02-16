@@ -97,7 +97,7 @@ pipeline {
 				sh 'python check_normes_dev.py'
             }
         }
-        stage('Package') { 
+        stage('Deploy') { 
             steps {
                 // package application pour déploiement : Capistrano (aka CR7), ansible, php deployer, zip de zouave
                 
