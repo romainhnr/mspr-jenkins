@@ -103,7 +103,7 @@ pipeline {
 				// sh '/var/lib/jenkins/.symfony/bin/symfony server:stop'
 				
 				echo 'deploy app ansible'
-				sh 'ansible-playbook ansible_playbook.yml'
+				sh 'sudo ansible-playbook ansible_playbook.yml'
 				
 				echo 'suppression projet'
 				sh 'rm -rf MSPR2'
