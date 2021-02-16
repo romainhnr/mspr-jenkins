@@ -92,6 +92,9 @@ pipeline {
 				
 				echo 'launch coding standards'
 				sh 'vendor/bin/phpcs --report-summary=report_coding_standards.txt MSPR2/'
+				
+				echo 'check coding standards'
+				sh 'python check_normes_dev.py'
             }
         }
         stage('Package') { 
