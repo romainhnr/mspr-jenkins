@@ -77,11 +77,11 @@ pipeline {
         }
         stage('Tests') { 
             steps {
-                // exécution des tests (fonctionnels, non régression, intégration, performances -> Alix) / test de couverture et normes de dev (PSR-2)
+                // Exécution des tests (fonctionnels, non régression, intégration, performances) + test de couverture et normes de dev (PSR-2)
 
                 dir('MSPR2/'){
 					echo 'changement de branche'
-					sh 'git checkout dev_test'
+					sh 'git checkout main'
 				}
 
 				echo 'launch test and coverage'
@@ -99,7 +99,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                // package application pour déploiement : Capistrano (aka CR7), ansible, php deployer, zip de zouave
+                // package application pour déploiement : Ansible
                 
                 echo 'build app'
 				// sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
