@@ -10,14 +10,8 @@ pipeline {
                 sh 'sudo apt install -y apache2'
 
                 echo 'install php'
-                sh 'sudo apt-get install php -y'
+                sh 'sudo apt-get install -y php7.3'
 
-                echo 'install composer'
-                sh 'sudo php -r "copy(\'https://getcomposer.org/installer\', \'composer-setup.php\');"'
-                sh 'sudo php -r "if (hash_file(\'sha384\', \'composer-setup.php\') === \'756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3\') { echo \'Installer verified\'; } else { echo \'Installer corrupt\'; unlink(\'composer-setup.php\'); } echo PHP_EOL;"'
-                sh 'sudo php composer-setup.php'
-                sh 'sudo php -r "unlink(\'composer-setup.php\');"'
-				
                 echo 'install symfony'
                 sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
                 
@@ -25,8 +19,7 @@ pipeline {
 		        sh 'php composer.phar require phpunit/phpunit'
 				
 				echo 'install Symfony PHP CodeSniffer'
-				sh 'php composer.phar require --dev escapestudios/symfony2-coding-standard:3.x-dev'
-				sh 'vendor/bin/phpcs --config-set installed_paths vendor/escapestudios/symfony2-coding-standard'
+				sh 'php composer.phar require squizlabs/php_codesniffer'
 				
 				echo 'install php xdebug code coverage'
 				sh 'sudo apt install php-xdebug -y'
@@ -45,14 +38,11 @@ pipeline {
 				echo 'php version'
 				sh 'php -v'
 				
-				echo 'check composer'
-				sh 'ls -la composer.phar'
-				
 				echo 'symfony version'
 				sh '/var/lib/jenkins/.symfony/bin/symfony -V'
 
                 echo 'phpunit version'
-                sh 'php vendor/phpunit/phpunit/phpunit --version'
+                sh 'php vendor/bin/phpunit --version'
 				
 				echo 'check php codesniffer coding standards'
 				sh 'vendor/bin/phpcs -i'
@@ -77,34 +67,30 @@ pipeline {
         }
         stage('Tests') { 
             steps {
-                // Exécution des tests (fonctionnels, non régression, intégration, performances) + test de couverture et normes de dev (PSR-2)
+                // Exécution des tests (fonctionnels, non régression, intégration, performances) + test de couverture et normes de dev (PSR-2 & Symfony)
 
                 dir('MSPR2/'){
 					echo 'changement de branche'
 					sh 'git checkout develop'
+					
+					echo 'launch test and coverage'
+					sh 'php vendor/bin/phpunit tests/ --coverage-xml report_pipeline/  --whitelist src/'
+
 				}
 
-				echo 'launch test and coverage'
-				echo 'wallah c bon sa march inchallux'
-				sh 'php vendor/bin/phpunit MSPR2/tests/ --coverage-xml report_pipeline/  --whitelist MSPR2/src/'
-				
 				echo 'script python check coverage test'
 				sh 'python check_coverage.py'
 				
 				echo 'launch coding standards'
-				//sh 'vendor/bin/phpcs --report-summary=report_pipeline/report_coding_standards.txt MSPR2/'
+				sh 'vendor/bin/phpcs --report-summary=report_pipeline/report_coding_standards.txt --ignore=*MSPR2/var/*,*MSPR2/bin/*,*MSPR2/vendor/* MSPR2/'
 				
 				echo 'check coding standards'
-				//sh 'python check_normes_dev.py'
+				sh 'python check_normes_dev.py'
             }
         }
         stage('Deploy') { 
             steps {
                 // package application pour déploiement : Ansible
-                
-                echo 'build app'
-				// sh '/var/lib/jenkins/.symfony/bin/symfony server:start'
-				// sh '/var/lib/jenkins/.symfony/bin/symfony server:stop'
 				
 				echo 'deploy app ansible'
 				sh 'sudo ansible-playbook ansible_playbook.yml'
