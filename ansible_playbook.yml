@@ -1,0 +1,8 @@
+- name: Installation de Symfony project
+  hosts: prod 
+  remote_user: vagrant
+  tasks:
+          - name: clone
+            command: chdir=/var/www/ sudo git clone https://github.com/RPSM2/MSPR2.git
+          - name: start server
+            command: chdir=/var/www/MSPR2/ sudo /usr/local/bin/symfony server:start -d
