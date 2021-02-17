@@ -8,14 +8,20 @@ pipeline {
 		sh 'ls -la'
 		sh 'pwd'
 		sh 'whoami'
+		
+		sh 'git checkout -b backup2'
+		sh 'git pull origin backup2'
+		
+		sh 'ls -la'
+		
                 echo 'install apache2'
-                //sh 'sudo apt install -y apache2'
+                sh 'sudo apt install -y apache2'
 
                 echo 'install php'
-                //sh 'sudo apt-get install -y php7.3'
+                sh 'sudo apt-get install -y php7.3'
 
                 echo 'install symfony'
-                //sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
+                sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
                 
                 echo 'install phpunit'
 		        sh 'sudo php composer.phar require phpunit/phpunit'
