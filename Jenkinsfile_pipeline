@@ -27,7 +27,7 @@ pipeline {
 		        sh 'php composer.phar require phpunit/phpunit'
 				
 				echo 'install Symfony PHP CodeSniffer'
-				sh 'sudo php composer.phar require squizlabs/php_codesniffer'
+				sh 'php composer.phar require squizlabs/php_codesniffer'
 				
 				echo 'install php xdebug code coverage'
 				sh 'sudo apt install php-xdebug -y'
@@ -56,7 +56,7 @@ pipeline {
 				sh 'vendor/bin/phpcs -i'
 				
 				echo 'check xdebug code coverage'
-				sh 'php -ini | grep \'xdebug support\''
+				// sh 'php -ini | grep \'xdebug support\''
 				
 				echo 'check ansible'
 				sh 'sudo ansible all -m ping -u vagrant'
