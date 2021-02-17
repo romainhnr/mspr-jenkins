@@ -1,6 +1,9 @@
 // jenkins pipeline MSPR 2 
 pipeline {
     agent any 
+    environment {
+        XDEBUG_MODE = 'coverage'
+    }
     stages {
         stage('Install') { 
             steps {
@@ -84,7 +87,6 @@ pipeline {
 				}
 				
 				echo 'launch test and coverage'
-				sh 'export \$XDEBUG_MODE=coverage'
 				sh 'php vendor/bin/phpunit MSPR2/tests/ --coverage-xml report_pipeline/  --whitelist MSPR2/src/'
 
 				echo 'script python check coverage test'
