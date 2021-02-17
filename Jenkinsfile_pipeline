@@ -16,10 +16,10 @@ pipeline {
                 sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
                 
                 echo 'install phpunit'
-		        sh 'php composer.phar require phpunit/phpunit'
+		        sh 'sudo php composer.phar require phpunit/phpunit'
 				
 				echo 'install Symfony PHP CodeSniffer'
-				sh 'php composer.phar require squizlabs/php_codesniffer'
+				sh 'sudo php composer.phar require squizlabs/php_codesniffer'
 				
 				echo 'install php xdebug code coverage'
 				sh 'sudo apt install php-xdebug -y'
