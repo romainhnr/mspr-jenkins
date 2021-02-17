@@ -1,9 +1,6 @@
 // jenkins pipeline MSPR 2 
 pipeline {
     agent any 
-    environment {
-        XDEBUG_MODE = 'coverage'
-    }
     stages {
         stage('Install') { 
             steps {
