@@ -13,7 +13,7 @@ pipeline {
                 sh 'sudo apt-get install -y php7.3'
 
                 echo 'install symfony'
-                sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
+                //sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
                 
                 echo 'install phpunit'
 		        sh 'sudo php composer.phar require phpunit/phpunit'
