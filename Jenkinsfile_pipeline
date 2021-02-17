@@ -5,9 +5,11 @@ pipeline {
         stage('Install') { 
             steps {
                 // installation de toutes les dépendances de l'environnement 
-
+		sh 'ls -la'
+		sh 'pwd'
+		sh 'whoami'
                 echo 'install apache2'
-                sh 'sudo apt install -y apache2'
+                //sh 'sudo apt install -y apache2'
 
                 echo 'install php'
                 //sh 'sudo apt-get install -y php7.3'
