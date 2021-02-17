@@ -9,7 +9,7 @@ pipeline {
 		sh 'pwd'
 		sh 'whoami'
 		
-		sh 'git checkout -b backup2'
+		sh 'git checkout backup2'
 		sh 'git pull origin backup2'
 		
 		sh 'ls -la'
