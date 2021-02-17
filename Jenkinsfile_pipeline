@@ -27,7 +27,7 @@ pipeline {
 		        sh 'php composer.phar require phpunit/phpunit'
 				
 				echo 'install Symfony PHP CodeSniffer'
-				sh 'php composer.phar require squizlabs/php_codesniffer'
+				sh 'sudo php composer.phar require squizlabs/php_codesniffer'
 				
 				echo 'install php xdebug code coverage'
 				sh 'sudo apt install php-xdebug -y'
