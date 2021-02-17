@@ -9,8 +9,8 @@ pipeline {
 		sh 'pwd'
 		sh 'whoami'
 		
-		sh 'git checkout backup2'
-		sh 'git pull origin backup2'
+		sh 'git checkout env'
+		sh 'git pull origin env'
 		
 		sh 'ls -la'
 		
