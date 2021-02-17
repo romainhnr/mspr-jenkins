@@ -5,7 +5,7 @@ pipeline {
         stage('Install') { 
             steps {
                 // installation de toutes les dépendances de l'environnement 
-		sh 'ls -la'
+		    sh 'ls -la'
 		sh 'pwd'
 		sh 'whoami'
 		
@@ -24,7 +24,7 @@ pipeline {
                 sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
                 
                 echo 'install phpunit'
-		        sh 'sudo php composer.phar require phpunit/phpunit'
+		        sh 'php composer.phar require phpunit/phpunit'
 				
 				echo 'install Symfony PHP CodeSniffer'
 				sh 'sudo php composer.phar require squizlabs/php_codesniffer'
