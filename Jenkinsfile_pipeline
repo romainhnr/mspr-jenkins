@@ -9,8 +9,6 @@ pipeline {
             steps {
                 // installation de toutes les dépendances de l'environnement 
 		    sh 'ls -la'
-		sh 'pwd'
-		sh 'whoami'
 		
 		sh 'git checkout env_clean'
 		sh 'git pull origin env_clean'
@@ -18,25 +16,25 @@ pipeline {
 		sh 'ls -la'
 		
                 echo 'install apache2'
-                sh 'sudo apt install -y apache2'
+                //sh 'sudo apt install -y apache2'
 
                 echo 'install php'
-                sh 'sudo apt-get install -y php7.3'
+                //sh 'sudo apt-get install -y php7.3'
 
                 echo 'install symfony'
-                sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
+                //sh 'sudo wget https://get.symfony.com/cli/installer -O - | bash'
                 
                 echo 'install phpunit'
-		        sh 'php composer.phar require phpunit/phpunit'
+		        //sh 'php composer.phar require phpunit/phpunit'
 				
 				echo 'install Symfony PHP CodeSniffer'
-				sh 'sudo php composer.phar require squizlabs/php_codesniffer'
+				//sh 'sudo php composer.phar require squizlabs/php_codesniffer'
 				
 				echo 'install php xdebug code coverage'
-				sh 'sudo apt install php-xdebug -y'
+				//sh 'sudo apt install php-xdebug -y'
 				
 				echo 'install ansible'
-				sh 'sudo apt-get -y install ansible'
+				//sh 'sudo apt-get -y install ansible'
             }
         }
         stage('Verification') { 
@@ -82,7 +80,7 @@ pipeline {
 
                 dir('MSPR2/'){
 					echo 'changement de branche'
-					sh 'git checkout develop'
+					sh 'git checkout simpleTest'
 					
 				}
 				
