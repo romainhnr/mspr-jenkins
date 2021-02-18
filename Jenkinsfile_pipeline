@@ -85,10 +85,11 @@ pipeline {
 				}
 				
 				echo 'launch test and coverage'
-				sh 'php vendor/bin/phpunit MSPR2/tests/AppTest.php --coverage-xml report_pipeline/  --whitelist MSPR2/src/'
-
+				sh 'php vendor/bin/phpunit MSPR2/tests/AppTest.php'
+				
+				// --coverage-xml report_pipeline/  --whitelist MSPR2/src/
 				echo 'script python check coverage test'
-				sh 'python check_coverage.py'
+				//sh 'python check_coverage.py'
 				
 				echo 'launch coding standards'
 				sh 'vendor/bin/phpcs --report-summary=report_pipeline/report_coding_standards.txt --ignore=*MSPR2/var/*,*MSPR2/bin/*,*MSPR2/vendor/* MSPR2/'
