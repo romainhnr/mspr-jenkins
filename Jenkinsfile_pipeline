@@ -85,6 +85,9 @@ pipeline {
 				}
 				
 				echo 'launch test and coverage'
+				dir('src/'){
+					sh 'mv Kernel.php isolation.txt'
+				}
 				sh 'php vendor/bin/phpunit MSPR2/tests/AppTest.php --coverage-xml report_pipeline/  --whitelist MSPR2/src/'
 				
 				
