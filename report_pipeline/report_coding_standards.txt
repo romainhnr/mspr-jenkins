@@ -1,0 +1,35 @@
+
+PHP CODE SNIFFER REPORT SUMMARY
+----------------------------------------------------------------------
+FILE                                                  ERRORS  WARNINGS
+----------------------------------------------------------------------
+MSPR2/config/bootstrap.php                            0       3
+MSPR2/migrations/Version20210205130259.php            0       2
+MSPR2/migrations/Version20210211093107.php            0       2
+MSPR2/migrations/Version20210211101606.php            0       9
+MSPR2/public/index.php                                0       1
+MSPR2/src/Controller/AchatController.php              3       1
+MSPR2/src/Controller/FinanceController.php            1       0
+MSPR2/src/Controller/IndexController.php              2       0
+MSPR2/src/Controller/RegistrationController.php       0       1
+MSPR2/src/Controller/RhController.php                 7       0
+MSPR2/src/Controller/SecurityController.php           0       1
+MSPR2/src/DataFixtures/UsersDeleteFixtures.php        3       0
+MSPR2/src/DataFixtures/usersEditFixtures.php          4       0
+MSPR2/src/DataFixtures/usersFixtures.php              3       0
+MSPR2/src/Entity/Articles.php                         1       0
+MSPR2/src/Entity/Fournisseur.php                      1       0
+MSPR2/src/Entity/Users.php                            1       0
+MSPR2/src/Form/NewAchatFormType.php                   0       1
+MSPR2/src/Form/NewEmployeFormType.php                 0       1
+MSPR2/src/Form/RegistrationFormType.php               0       1
+MSPR2/src/Security/UsersAuthenticator.php             0       1
+MSPR2/tests/RegistrationControllerTest.php            1       0
+MSPR2/tests/UsersTest.php                             6       0
+----------------------------------------------------------------------
+A TOTAL OF 33 ERRORS AND 24 WARNINGS WERE FOUND IN 23 FILES
+----------------------------------------------------------------------
+PHPCBF CAN FIX 25 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------
+
+

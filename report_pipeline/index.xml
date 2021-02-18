@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <build time="Wed Feb 17 22:03:07 UTC 2021" phpunit="9.5.2" coverage="9.2.5">
+    <runtime name="PHP" version="7.3.27-4+ubuntu18.04.1+deb.sury.org+1" url="https://secure.php.net/"/>
+    <driver name="xdebug" version="3.0.2"/>
+  </build>
+  <project source="/var/lib/jenkins/workspace/MSPR/MSPR2/src">
+    <tests/>
+    <directory name="/">
+      <totals>
+        <lines total="1537" comments="367" code="1170" executable="294" executed="0" percent="0.00"/>
+        <methods count="95" tested="0" percent="0.00"/>
+        <functions count="0" tested="0" percent="0"/>
+        <classes count="23" tested="0" percent="0.00"/>
+        <traits count="0" tested="0" percent="0"/>
+      </totals>
+      <directory name="Controller">
+        <totals>
+          <lines total="306" comments="48" code="258" executable="80" executed="0" percent="0.00"/>
+          <methods count="14" tested="0" percent="0.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="6" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="AchatController.php" href="Controller/AchatController.php.xml">
+          <totals>
+            <lines total="89" comments="15" code="74" executable="28" executed="0" percent="0.00"/>
+            <methods count="4" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="FinanceController.php" href="Controller/FinanceController.php.xml">
+          <totals>
+            <lines total="17" comments="3" code="14" executable="1" executed="0" percent="0.00"/>
+            <methods count="1" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="IndexController.php" href="Controller/IndexController.php.xml">
+          <totals>
+            <lines total="28" comments="6" code="22" executable="3" executed="0" percent="0.00"/>
+            <methods count="2" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="RegistrationController.php" href="Controller/RegistrationController.php.xml">
+          <totals>
+            <lines total="52" comments="3" code="49" executable="16" executed="0" percent="0.00"/>
+            <methods count="1" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="RhController.php" href="Controller/RhController.php.xml">
+          <totals>
+            <lines total="83" comments="15" code="68" executable="26" executed="0" percent="0.00"/>
+            <methods count="4" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="SecurityController.php" href="Controller/SecurityController.php.xml">
+          <totals>
+            <lines total="37" comments="6" code="31" executable="6" executed="0" percent="0.00"/>
+            <methods count="2" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="DataFixtures">
+        <totals>
+          <lines total="44" comments="1" code="43" executable="14" executed="0" percent="0.00"/>
+          <methods count="2" tested="0" percent="0.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="2" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="UserFixtures.php" href="DataFixtures/UserFixtures.php.xml">
+          <totals>
+            <lines total="22" comments="0" code="22" executable="7" executed="0" percent="0.00"/>
+            <methods count="1" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="usersFixtures.php" href="DataFixtures/usersFixtures.php.xml">
+          <totals>
+            <lines total="22" comments="1" code="21" executable="7" executed="0" percent="0.00"/>
+            <methods count="1" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Entity">
+        <totals>
+          <lines total="578" comments="143" code="435" executable="88" executed="0" percent="0.00"/>
+          <methods count="55" tested="0" percent="0.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="5" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="Achats.php" href="Entity/Achats.php.xml">
+          <totals>
+            <lines total="75" comments="17" code="58" executable="10" executed="0" percent="0.00"/>
+            <methods count="7" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="Articles.php" href="Entity/Articles.php.xml">
+          <totals>
+            <lines total="80" comments="17" code="63" executable="11" executed="0" percent="0.00"/>
+            <methods count="8" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="Employes.php" href="Entity/Employes.php.xml">
+          <totals>
+            <lines total="185" comments="44" code="141" executable="35" executed="0" percent="0.00"/>
+            <methods count="18" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="Fournisseur.php" href="Entity/Fournisseur.php.xml">
+          <totals>
+            <lines total="96" comments="20" code="76" executable="14" executed="0" percent="0.00"/>
+            <methods count="10" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="Users.php" href="Entity/Users.php.xml">
+          <totals>
+            <lines total="142" comments="45" code="97" executable="18" executed="0" percent="0.00"/>
+            <methods count="12" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Form">
+        <totals>
+          <lines total="181" comments="3" code="178" executable="46" executed="0" percent="0.00"/>
+          <methods count="6" tested="0" percent="0.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="3" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="NewAchatFormType.php" href="Form/NewAchatFormType.php.xml">
+          <totals>
+            <lines total="67" comments="0" code="67" executable="10" executed="0" percent="0.00"/>
+            <methods count="2" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="NewEmployeFormType.php" href="Form/NewEmployeFormType.php.xml">
+          <totals>
+            <lines total="59" comments="0" code="59" executable="20" executed="0" percent="0.00"/>
+            <methods count="2" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="RegistrationFormType.php" href="Form/RegistrationFormType.php.xml">
+          <totals>
+            <lines total="55" comments="3" code="52" executable="16" executed="0" percent="0.00"/>
+            <methods count="2" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Repository">
+        <totals>
+          <lines total="267" comments="168" code="99" executable="16" executed="0" percent="0.00"/>
+          <methods count="6" tested="0" percent="0.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="5" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="AchatsRepository.php" href="Repository/AchatsRepository.php.xml">
+          <totals>
+            <lines total="50" comments="33" code="17" executable="2" executed="0" percent="0.00"/>
+            <methods count="1" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="ArticlesRepository.php" href="Repository/ArticlesRepository.php.xml">
+          <totals>
+            <lines total="50" comments="33" code="17" executable="2" executed="0" percent="0.00"/>
+            <methods count="1" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="EmployesRepository.php" href="Repository/EmployesRepository.php.xml">
+          <totals>
+            <lines total="50" comments="33" code="17" executable="2" executed="0" percent="0.00"/>
+            <methods count="1" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="FournisseurRepository.php" href="Repository/FournisseurRepository.php.xml">
+          <totals>
+            <lines total="50" comments="33" code="17" executable="2" executed="0" percent="0.00"/>
+            <methods count="1" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="UsersRepository.php" href="Repository/UsersRepository.php.xml">
+          <totals>
+            <lines total="67" comments="36" code="31" executable="8" executed="0" percent="0.00"/>
+            <methods count="2" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Security">
+        <totals>
+          <lines total="107" comments="4" code="103" executable="28" executed="0" percent="0.00"/>
+          <methods count="8" tested="0" percent="0.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="UsersAuthenticator.php" href="Security/UsersAuthenticator.php.xml">
+          <totals>
+            <lines total="107" comments="4" code="103" executable="28" executed="0" percent="0.00"/>
+            <methods count="8" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <file name="Kernel.php" href="Kernel.php.xml">
+        <totals>
+          <lines total="54" comments="0" code="54" executable="22" executed="0" percent="0.00"/>
+          <methods count="4" tested="0" percent="0.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+    </directory>
+  </project>
+</phpunit>
