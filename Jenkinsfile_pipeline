@@ -106,7 +106,7 @@ pipeline {
 				sh 'mv phpDocumentor.phar MSPR2/phpDocumentor.phar'
 				
 				dir('MSPR2/'){
-					php phpDocumentor.phar -d ./src -d ./tests
+					sh 'php phpDocumentor.phar -d ./src -d ./tests'
 				}
 				
 				echo 'deploy app ansible'
